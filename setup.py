@@ -204,10 +204,6 @@ else:
 
     libraries = ['sybdb']
 
-    with fs_cleanup(files=['a.out'], dirs=['tmp']):
-        with stdchannel_redirected(sys.stderr, os.devnull):
-            if compiler.has_function('clock_gettime', libraries=['rt']):
-                libraries.append('rt')
 
 usr_local = '/usr/local'
 if osp.exists(usr_local):
